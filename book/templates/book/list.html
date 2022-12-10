@@ -1,0 +1,32 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+<body>
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-center">
+      <img src="{{book.cover.url}}" style="width:20%">
+      <h2>{{book.title}}</h2>
+      <h3> نویسنده: <a href={% url 'book:writer_books' book.writer.name %}> {{book.writer}}</a></h3>
+      <h3> ژانر: <a href={% url 'book:cat_books' book.parent_category.name %}> {{book.parent_category}}</a></h3>
+      <h4>: توضیحات<h4>
+      <h6>{{book.description}}</h6>
+      <h4>{{book.price}} : قیمت<h4>
+
+
+    </div>
+    
+
+  
